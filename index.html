@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <title>Document</title>
+
+    <style>
+      #menu-open {
+        font-size: 35px;
+        cursor: pointer;
+        margin: 1% 2%;
+      }
+
+      #nav-menu {
+        background-color: blueviolet;
+        width: 200px;
+        border-radius: 0 8px 8px 0;
+        position: absolute;
+        top: -100%;
+        height: 100vh;
+        transition: all 0.4s;
+
+        #menu-close {
+          font-size: 35px;
+          cursor: pointer;
+          margin: 7% 10%;
+        }
+
+        #menu-items {
+          a {
+            color: white;
+            font-weight: 500;
+            font-family: system-ui, sans-serif;
+            text-decoration: none;
+            margin: 10px 0;
+            padding: 8px;
+            display: flex;
+            justify-content: center;
+            transition: all 0.3s;
+          }
+        }
+
+        a:hover {
+          background: #904bff;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <span class="material-symbols-outlined" id="menu-open">MENU</span>
+
+    <nav id="nav-menu">
+      <span class="material-symbols-outlined" id="menu-close"> CLOSE </span>
+      <div id="menu-items">
+        <a href="#">Inicio</a>
+        <a href="#">Nosotros</a>
+        <a href="#">Servicios</a>
+      </div>
+    </nav>
+  </body>
+
+  <script>
+    //open menu
+    const menuOpen = document.getElementById("menu-open");
+    const navMenu = document.getElementById("nav-menu");
+
+    menuOpen.addEventListener("click", () => {
+      navMenu.style.top = "0";
+      navMenu.style.left = "0";
+
+      // close menu
+      const menuClose = document
+        .getElementById("menu-close")
+        .addEventListener("click", () => {
+          navMenu.style.top = "-100%";
+        });
+    });
+  </script>
+</html>
